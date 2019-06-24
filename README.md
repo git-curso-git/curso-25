@@ -4,19 +4,24 @@ DESHACER CAMBIOS
 
 	git reset --hard
 
-	git cherry-pick
-
 	git revert
 
 	git commit --amend
 
 
-MERGE/MEZCLAR
--------------
+APLICAR/MEZCLAR CAMBIOS
+-----------------------
+
+	git cherry-pick
 
 	git rebase
 
 	git merge
+
+PETICION PARA APLICAR CAMBIOS
+-----------------------------
+
+	git request-pull
 
 
 ANALIZAR CAMBIOS
@@ -33,4 +38,9 @@ ANALIZAR CAMBIOS
 	git blame
 
 	git dag
+
+RAMAS TEMPORALES (stash)
+------------------------
+
+	git stash
 
