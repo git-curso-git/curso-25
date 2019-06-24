@@ -1,0 +1,87 @@
+rm -rf reploc
+
+git init reploc
+cd reploc
+
+echo "1" > fichero.txt
+git add fichero.txt
+git commit -m "linea 1"
+
+git tag v1.0
+
+echo "ERROR" >> fichero.txt
+git add fichero.txt
+git commit -m "error 1"
+git tag v1.0-ERROR
+
+echo "2" >> fichero.txt
+git add fichero.txt
+git commit -m "linea 2"
+
+echo "3" >> fichero.txt
+git add fichero.txt
+git commit -m "linea 3"
+
+echo "ERROR" >> fichero.txt
+git add fichero.txt
+git commit -m "error 2"
+
+gitk --all &
+
+echo "*********************************"
+read -p "ENTER para seguir"
+
+git reset --hard HEAD~
+
+echo "*********************************"
+read -p "ENTER para seguir"
+
+echo "4" >> fichero.txt
+git add fichero.txt
+git commit -m "linea 4"
+
+echo "5" >> fichero.txt
+git add fichero.txt
+git commit -m "linea 5"
+
+echo "*********************************"
+read -p "ENTER para seguir"
+
+git reset --hard v1.0-ERROR
+
+echo "2" >> fichero.txt
+git add fichero.txt
+git commit -m "linea 2 bis"
+
+echo "3" >> fichero.txt
+git add fichero.txt
+git commit -m "linea 3 bis"
+
+echo "ERROR" >> fichero.txt
+git add fichero.txt
+git commit -m "error 2 bis"
+
+echo "4" >> fichero.txt
+git add fichero.txt
+git commit -m "linea 4"
+
+echo "5" >> fichero.txt
+git add fichero.txt
+git commit -m "linea 5"
+
+echo "*********************************"
+read -p "ENTER para seguir"
+
+git gc
+
+git show :fichero.txt | fgrep -v ERROR > fichero.txt
+
+git add fichero.txt
+git commit -m "eliminadas lineas ERROR"
+git tag -a v1.1
+
+
+
+
+
+

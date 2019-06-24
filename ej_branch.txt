@@ -1,0 +1,65 @@
+rm -rf repbranch
+git init repbranch
+cd repbranch
+
+echo "linea inicial" > fichero.txt
+git add fichero.txt
+git commit -m "linea inicial"
+git tag v0.0
+
+#################################
+git checkout -b br1
+
+echo "1" >> fichero.txt
+git add fichero.txt
+echo "br1" > rama.txt
+git add rama.txt
+git commit -m "br1"
+
+#################################
+git checkout master
+git checkout -b br2
+
+echo "2" >> fichero.txt
+git add fichero.txt
+echo "br2" > rama.txt
+git add rama.txt
+git commit -m "br2"
+
+#################################
+git checkout master
+git checkout -b br3
+
+echo "3" >> fichero.txt
+git add fichero.txt
+echo "br3" > rama.txt
+git add rama.txt
+git commit -m "br3"
+
+#################################
+git checkout master
+git checkout -b br4
+
+echo "4" >> fichero.txt
+git add fichero.txt
+echo "br4" > rama.txt
+git add rama.txt
+git commit -m "br4"
+
+#################################
+git checkout master
+git checkout -b br5
+
+echo "5" >> fichero.txt
+git add fichero.txt
+echo "br5" > rama.txt
+git add rama.txt
+git commit -m "br5"
+
+#################################
+git checkout master
+echo "linea 2" >> fichero.txt
+git add fichero.txt
+git commit -m "segunda linea"
+
+#################################
